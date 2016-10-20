@@ -42,6 +42,7 @@ function ionAudioTrack(MediaManager, $rootScope) {
             $scope.track.status = status;
         };
         var progressChange = function(progress, duration) {
+            $rootScope.$broadcast('ionic-audio:progressChange', [progress, duration]);
             $scope.track.progress = progress;
             $scope.track.duration = duration;
         };
